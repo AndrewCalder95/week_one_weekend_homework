@@ -16,3 +16,10 @@ def get_pets_sold(get_pets):
 def increase_pets_sold(get_pets, extra):
     get_pets["admin"]["pets_sold"] = extra
     return get_pets["admin"]["pets_sold"]
+
+
+def get_stock_count(pets):
+    stock_count = 0
+    for pet in pets["pets"]:
+        stock_count += 1
+    return stock_count
