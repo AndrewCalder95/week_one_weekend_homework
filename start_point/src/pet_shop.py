@@ -4,11 +4,9 @@ def get_pet_shop_name(pet_shop):
 def get_total_cash(total_cash):
     return total_cash["admin"]["total_cash"]
 
-
 def add_or_remove_cash(total_cash, new_cash):
     total_cash["admin"]["total_cash"] += new_cash
     return total_cash["admin"]["total_cash"]
-
 
 def get_pets_sold(get_pets):
     return get_pets["admin"]["pets_sold"]
@@ -16,7 +14,6 @@ def get_pets_sold(get_pets):
 def increase_pets_sold(get_pets, extra):
     get_pets["admin"]["pets_sold"] = extra
     return get_pets["admin"]["pets_sold"]
-
 
 def get_stock_count(pets):
     stock_count = 0
@@ -38,11 +35,11 @@ def find_pet_by_name(pets,name):
             found_pet["name"] = pet
             return found_pet["name"]
 
-# def remove_pet_by_name(pets, name):
-#     for pet in pets["pets"]:
-#         if pet["name"] == name:
-#             return pet["name"] = None
-
+def remove_pet_by_name(pets, name):
+    for pet in pets["pets"]:
+        if pet["name"] == name:
+            pet["name"] = ""
+            return pet["name"]
 
 def add_pet_to_stock(pets, new_pet):
     pets["pets"].append(new_pet)
